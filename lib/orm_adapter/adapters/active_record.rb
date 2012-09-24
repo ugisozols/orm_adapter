@@ -69,6 +69,6 @@ module OrmAdapter
 end
 
 ActiveSupport.on_load(:active_record) do
-  extend ::OrmAdapter::ToAdapter
-  self::OrmAdapter = ::OrmAdapter::ActiveRecord
+  include ::OrmAdapter::ToAdapter
+  ActiveRecord::Base::OrmAdapter = ::OrmAdapter::ActiveRecord
 end
